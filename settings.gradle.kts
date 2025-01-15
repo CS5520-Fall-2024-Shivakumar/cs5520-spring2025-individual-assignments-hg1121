@@ -20,5 +20,3 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "NUMAD25Sp_HongGuo"
-include ':app'
-include ':app'
