@@ -1,0 +1,2 @@
+build/* linguist-generated=true
+*.gradle linguist-generated=true 
