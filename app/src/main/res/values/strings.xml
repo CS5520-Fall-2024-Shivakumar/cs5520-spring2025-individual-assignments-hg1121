@@ -1,3 +1,24 @@
 <resources>
     <string name="app_name">NUMAD25Sp_HongGuo</string>
+    <string name="about_me">About Me</string>
+    <string name="hello_world">Hello World!</string>
+    <string name="about_me_text">Name: Hong Guo\nEmail: guo.hong1@northeastern.edu</string>
+    <string name="quic_calc">Quic Calc</string>
+    
+    <!-- Calculator strings -->
+    <string name="calc_display">CALC</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
+    <string name="button_3">3</string>
+    <string name="button_4">4</string>
+    <string name="button_5">5</string>
+    <string name="button_6">6</string>
+    <string name="button_7">7</string>
+    <string name="button_8">8</string>
+    <string name="button_9">9</string>
+    <string name="button_0">0</string>
+    <string name="button_plus">+</string>
+    <string name="button_minus">-</string>
+    <string name="button_x">x</string>
+    <string name="button_equals">=</string>
 </resources>

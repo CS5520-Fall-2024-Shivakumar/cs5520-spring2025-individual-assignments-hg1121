@@ -1,5 +1,6 @@
 package com.example.numad25sp_hongguo;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -24,9 +25,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Toast.makeText(
                     MainActivity.this,
-                    "Name: Hong Guo\nEmail: guo.hong1@northeastern.edu",
+                    getString(R.string.about_me_text),
                     Toast.LENGTH_LONG
                 ).show();
+            }
+        });
+
+        // Calculator button setup
+        Button calcButton = findViewById(R.id.calcButton);
+        calcButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, CalculatorActivity.class);
+                startActivity(intent);
             }
         });
     }
