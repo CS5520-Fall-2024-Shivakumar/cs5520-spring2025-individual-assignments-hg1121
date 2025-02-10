@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:text="@string/calc_display"
         android:textSize="24sp"
-        android:gravity="end"
+        android:gravity="start"
         android:padding="16dp"
         android:background="#333333"
         android:textColor="@android:color/white"
@@ -188,4 +188,4 @@
         app:layout_constraintEnd_toEndOf="@id/endGuideline"
         app:layout_constraintHorizontal_weight="1.2"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout> 
+</androidx.constraintlayout.widget.ConstraintLayout>
