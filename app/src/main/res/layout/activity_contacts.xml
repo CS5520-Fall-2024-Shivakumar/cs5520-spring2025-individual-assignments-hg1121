@@ -18,6 +18,7 @@
         android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:contentDescription="@string/add_contact"
-        android:src="@android:drawable/ic_input_add" />
+        android:src="@android:drawable/ic_input_add"
+        app:backgroundTint="#2660D5" />
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout> 
