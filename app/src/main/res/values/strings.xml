@@ -21,4 +21,20 @@
     <string name="button_minus">-</string>
     <string name="button_x">x</string>
     <string name="button_equals">=</string>
+
+    <!--  Contact Strings -->
+    <string name="contacts_collector">Contacts Collector</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="edit_contact">Edit Contact</string>
+    <string name="delete_contact">Delete Contact</string>
+    <string name="name">Name</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="empty_fields_error">Name and phone number cannot be empty</string>
+    <string name="contact_added">Contact added successfully</string>
+    <string name="contact_updated">Contact updated successfully</string>
+    <string name="contact_deleted">Contact deleted successfully</string>
+    <string name="delete_confirmation">Are you sure you want to delete this contact?</string>
+    <string name="permission_denied">Call permission denied</string>
+    <string name="undo">UNDO</string>
+
 </resources>
