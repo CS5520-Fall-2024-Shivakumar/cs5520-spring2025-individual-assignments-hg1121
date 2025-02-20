@@ -18,9 +18,11 @@ import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import java.util.ArrayList;
 import java.util.List;
+import androidx.annotation.NonNull;
 
 public class ContactsActivity extends AppCompatActivity implements ContactsAdapter.ContactClickListener {
     private static final int CALL_PERMISSION_REQUEST_CODE = 123;
+    private static final String KEY_CONTACTS = "contacts";
     private List<Contact> contacts = new ArrayList<>();
     private ContactsAdapter adapter;
     private Contact selectedContact;
@@ -35,8 +37,23 @@ public class ContactsActivity extends AppCompatActivity implements ContactsAdapt
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(adapter);
 
+        // Restore contacts if there's saved state
+        if (savedInstanceState != null) {
+            ArrayList<Contact> savedContacts = savedInstanceState.getParcelableArrayList(KEY_CONTACTS);
+            if (savedContacts != null) {
+                contacts = new ArrayList<>(savedContacts);
+                adapter.updateContacts(contacts);
+            }
+        }
+
         FloatingActionButton fab = findViewById(R.id.addContactFab);
         fab.setOnClickListener(v -> showContactDialog(null, -1));
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putParcelableArrayList(KEY_CONTACTS, new ArrayList<>(contacts));
     }
 
     private void showContactDialog(Contact contact, int position) {
