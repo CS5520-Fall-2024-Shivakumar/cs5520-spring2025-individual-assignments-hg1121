@@ -74,17 +74,17 @@ public class ContactsActivity extends AppCompatActivity implements ContactsAdapt
                     String phone = phoneInput.getText().toString();
 
                     if (name.isEmpty() || phone.isEmpty()) {
-                        showSnackbar(getString(R.string.empty_fields_error), false);
+                        showSnackbar(getString(R.string.empty_fields_error), false, null, null);
                         return;
                     }
 
                     if (contact == null) {
                         contacts.add(new Contact(name, phone));
-                        showSnackbar(getString(R.string.contact_added), true);
+                        showSnackbar(getString(R.string.contact_added), false, null, null);
                     } else {
                         contact.setName(name);
                         contact.setPhoneNumber(phone);
-                        showSnackbar(getString(R.string.contact_updated), true);
+                        showSnackbar(getString(R.string.contact_updated), false, null, null);
                     }
                     adapter.updateContacts(contacts);
                 })
@@ -122,21 +122,22 @@ public class ContactsActivity extends AppCompatActivity implements ContactsAdapt
                 .setTitle(R.string.delete_contact)
                 .setMessage(R.string.delete_confirmation)
                 .setPositiveButton(android.R.string.yes, (dialog, which) -> {
-                    contacts.remove(position);
+                    Contact deletedContact = contacts.remove(position); // Store deleted contact
                     adapter.updateContacts(contacts);
-                    showSnackbar(getString(R.string.contact_deleted), true);
+                    showSnackbar(getString(R.string.contact_deleted), true, deletedContact, position);
                 })
                 .setNegativeButton(android.R.string.no, null)
                 .show();
     }
 
-    private void showSnackbar(String message, boolean showUndo) {
+    private void showSnackbar(String message, boolean showUndo, Contact deletedContact, Integer position) {
         Snackbar snackbar = Snackbar.make(findViewById(android.R.id.content),
                 message, Snackbar.LENGTH_LONG);
 
-        if (showUndo) {
+        // Only show the undo button if needed
+        if (showUndo && deletedContact != null && position != null) {
             snackbar.setAction(R.string.undo, v -> {
-                // Implement undo logic here
+                contacts.add(position, deletedContact); // Restore contact
                 adapter.updateContacts(contacts);
             });
         }
@@ -154,7 +155,7 @@ public class ContactsActivity extends AppCompatActivity implements ContactsAdapt
                     makePhoneCall(selectedContact);
                 }
             } else {
-                showSnackbar(getString(R.string.permission_denied), false);
+                showSnackbar(getString(R.string.permission_denied), false, null, null);
             }
         }
     }
