@@ -46,5 +46,16 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        // Prime Button setup
+        Button primeButton = findViewById(R.id.primeButton);
+        primeButton.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, PrimeActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 } 
