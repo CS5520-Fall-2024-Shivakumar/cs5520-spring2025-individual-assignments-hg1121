@@ -20,47 +20,53 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- About Me Button -->
+
+    <!-- Calculator Button -->
+
     <Button
         android:id="@+id/aboutButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:backgroundTint="#ADD8E6"
         android:text="@string/about_me"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.5" />
+        app:layout_constraintVertical_bias="0.423"
+        app:layout_constraintWidth_percent="0.6" />
 
-    <!-- Calculator Button -->
     <Button
         android:id="@+id/calcButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="@string/quic_calc"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/aboutButton" />
+        app:layout_constraintTop_toBottomOf="@+id/aboutButton"
+        app:layout_constraintWidth_percent="0.6"/>
 
     <!-- Contacts button -->
     <Button
         android:id="@+id/contactsButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#F6EEAF"
         android:text="@string/contacts_collector"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calcButton" />
+        app:layout_constraintTop_toBottomOf="@+id/calcButton"
+        app:layout_constraintWidth_percent="0.6"/>
 
     <!-- Prime Button  -->
     <Button
         android:id="@+id/primeButton"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:backgroundTint="#639EEB"
@@ -68,6 +74,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/contactsButton"
+        app:layout_constraintWidth_percent="0.6"
          />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

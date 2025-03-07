@@ -41,5 +41,6 @@
     <string name="prime_button">Prime</string>
     <string name="find_primes">Find Primes</string>
     <string name="terminate_search">Terminate Search</string>
+    <string name="previous_prime">Previous Prime:</string>
 
 </resources>
