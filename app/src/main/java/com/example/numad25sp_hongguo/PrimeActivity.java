@@ -3,11 +3,12 @@ package com.example.numad25sp_hongguo;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.activity.OnBackPressedCallback;
+import androidx.appcompat.app.AlertDialog;
 
 public class PrimeActivity extends AppCompatActivity implements PrimeThread.PrimeCallback {
     private TextView previousPrimeText;
@@ -59,6 +60,27 @@ public class PrimeActivity extends AppCompatActivity implements PrimeThread.Prim
             previousPrimeText.setText("3");
             currentSearchingText.setText("3");
         }
+
+        // Handle back button press using OnBackPressedDispatcher
+        getOnBackPressedDispatcher().addCallback(this, new OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                if (primeThread != null && primeThread.isAlive()) {
+                    // Show confirmation dialog
+                    new AlertDialog.Builder(PrimeActivity.this)
+                            .setTitle("Confirm Exit")
+                            .setMessage("A prime number search is running. Are you sure you want to stop and exit?")
+                            .setPositiveButton("Yes", (dialog, which) -> {
+                                stopPrimeSearch(); // Stop the search
+                                finish(); // Close activity
+                            })
+                            .setNegativeButton("No", (dialog, which) -> dialog.dismiss()) // Dismiss dialog
+                            .show();
+                } else {
+                    finish(); // Normal exit if no search is running
+                }
+            }
+        });
     }
 
     @Override
@@ -122,4 +144,5 @@ public class PrimeActivity extends AppCompatActivity implements PrimeThread.Prim
             primeThread.stopSearch();
         }
     }
+
 }
