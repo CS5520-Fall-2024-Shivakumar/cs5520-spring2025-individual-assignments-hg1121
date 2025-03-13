@@ -46,8 +46,8 @@ public class PrimeActivity extends AppCompatActivity implements PrimeThread.Prim
             pacifierSwitch.setChecked(savedInstanceState.getBoolean(KEY_PACIFIER_STATE, false));
             
             // Restore the last prime and current number
-            String lastPrime = savedInstanceState.getString(KEY_LAST_PRIME, "3");
-            String currentNumber = savedInstanceState.getString(KEY_CURRENT_NUMBER, "3");
+            String lastPrime = savedInstanceState.getString(KEY_LAST_PRIME, "None");
+            String currentNumber = savedInstanceState.getString(KEY_CURRENT_NUMBER, "None");
             previousPrimeText.setText(lastPrime);
             currentSearchingText.setText(currentNumber);
 
@@ -57,8 +57,8 @@ public class PrimeActivity extends AppCompatActivity implements PrimeThread.Prim
             }
         } else {
             // start from beginning
-            previousPrimeText.setText("3");
-            currentSearchingText.setText("3");
+            previousPrimeText.setText("None");
+            currentSearchingText.setText("None");
         }
 
         // Handle back button press using OnBackPressedDispatcher

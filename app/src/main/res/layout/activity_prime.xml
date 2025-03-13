@@ -35,7 +35,7 @@
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Previous Prime:"
+                    android:text="Previous Prime: "
                     android:textColor="#192AB6"
                     android:textSize="18sp"
                     android:textStyle="bold" />
@@ -70,7 +70,7 @@
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Current Searching:"
+                    android:text="Current Searching: "
                     android:textColor="#192AB6"
                     android:textSize="18sp"
                     android:textStyle="bold" />
